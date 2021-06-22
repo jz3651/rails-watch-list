@@ -1,0 +1,44 @@
+// Specific CSS for your home-page
+.card-category {
+    height: 150px;
+    width: 300px;
+    border: solid 1px lightgray;
+    margin-bottom: 40px;
+    text-align: center;
+    border-radius: 7px;
+    a {
+        text-decoration: none;
+        vertical-align: middle;
+        line-height: 150px;
+        font-weight: bold;
+        color: gray;
+    }
+}
+
+.list-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: auto;
+    h2{
+        margin: 0;
+    }
+}
+
+.hero {
+    height: 600px;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/cGNVTBcP7vY') no-repeat;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    h1 {
+        color: white;
+        font-weight: bold;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+    }
+}

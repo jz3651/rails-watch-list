@@ -1,0 +1,22 @@
+<div class="hero">
+    <div class="hero-content">
+        <h1>Welcome to your watchlists</h1>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="list-banner">
+        <h2>My Lists</h2>
+        <%= link_to "Add List +", new_list_path, class: "button text-decoration-none" %>
+    </div>
+    <div class="row">
+        <% @lists.each do |list| %>
+            <div class="col-md-4">
+                <div class="card-category">
+                    <%= link_to list.name, list_path(list) %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+
