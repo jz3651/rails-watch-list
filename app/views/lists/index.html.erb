@@ -1,22 +1,32 @@
 <div class="hero">
+    <img src="https://source.unsplash.com/cGNVTBcP7vY" class="hero-image" alt="cinema">
     <div class="hero-content">
-        <h1>Welcome to your watchlists</h1>
+        <h1><span id="banner-typed-text"></span></h1>
     </div>
 </div>
 
 <div class="container mt-3">
     <div class="list-banner">
         <h2>My Lists</h2>
-        <%= link_to "Add List +", new_list_path, class: "button text-decoration-none" %>
+        <%= link_to new_list_path, class: "text-decoration-none" do %>
+            <div class="add-list">
+                <div class="add-list-text"><p>Add List +</p></div>
+            </div>
+        <% end %>
     </div>
     <div class="row">
         <% @lists.each do |list| %>
-            <div class="col-md-4">
-                <div class="card-category">
-                    <%= link_to list.name, list_path(list) %>
-                </div>
+            <div class="col-sm-4 list-card">
+                <%= link_to list_path(list), class: "text-decoration-none" do %>
+                    <% if list.photo.attached? %>
+                        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cloudinary_url(list.photo.key) %>)">
+                    <% else %>
+                        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/KaHIwqDCS7E')">
+                    <% end %>
+                            <div class="list-name"><%= list.name %></div>
+                        </div>
+                <% end %>
             </div>
         <% end %>
     </div>
 </div>
-

@@ -1,18 +1,23 @@
 // Specific CSS for your home-page
 .card-category {
-    height: 150px;
-    width: 300px;
-    border: solid 1px lightgray;
     margin-bottom: 40px;
     text-align: center;
     border-radius: 7px;
-    a {
-        text-decoration: none;
-        vertical-align: middle;
-        line-height: 150px;
-        font-weight: bold;
-        color: gray;
+    background-size: cover;
+    background-position: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    opacity: 0.8;
+    transition: 0.2s;
+    &:hover {
+        opacity: 1;
     }
+}
+
+.list-name {
+    vertical-align: middle;
+    line-height: 150px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
 }
 
 .list-banner {
@@ -29,8 +34,6 @@
 .hero {
     height: 600px;
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/cGNVTBcP7vY') no-repeat;
-    background-size: cover;
     text-align: center;
     position: relative;
     h1 {
@@ -40,5 +43,36 @@
         transform: translate(-50%, -50%);
         position: absolute;
         left: 50%;
+    }
+    .hero-image {
+        // background-color: (rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        background: rgba(0,0,0,0.5);
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.container {
+    padding: 20px;
+    width: 950px
+}
+
+.row {
+    align-items: center;
+}
+
+.add-list {
+    width: 100px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    transition: 0.2s;
+    &:hover {
+        background-color: rgb(60, 187, 60);
     }
 }

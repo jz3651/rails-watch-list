@@ -1,4 +1,14 @@
-<h1><%= @list.name %></h1>
+<div class="hero">
+  <% if @list.photo.attached? %>
+    <img src="<%= cloudinary_url(@list.photo.key) %>" alt="" class="hero-image">
+  <% else %>
+    <img src="https://source.unsplash.com/KaHIwqDCS7E" alt="" class="hero-image">
+  <% end %>
+    <div class="hero-content">
+        <h1><%= @list.name %></h1>
+    </div>
+</div>
+
 <%= link_to "Back", lists_path %> | 
 <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
 <ul class="list-group">
@@ -12,4 +22,3 @@
       <% end %>
     </ul>
 </ul>
-
